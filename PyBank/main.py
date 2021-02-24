@@ -1,7 +1,7 @@
 import csv
 
 with open('resources/budget_data.csv', 'r') as csv_file:
-  with open('analysis/test.txt', 'w') as new_file:
+  with open('analysis/financial_analysis.txt', 'w') as new_file:
     csv_reader = csv.DictReader(csv_file)
 
     months = 0
