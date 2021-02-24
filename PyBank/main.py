@@ -28,10 +28,12 @@ with open('resources/budget_data.csv', 'r') as csv_file:
       # total_change += cur_change
       prev_pl = cur_pl
 
-    print(total_change)
-    new_file.write('Financial Analysis\n------------------------\n')
-    new_file.write('Total Months: ' + str(months) + '\n')
-    new_file.write('Total: $' + str(total) + '\n')
-    new_file.write('Average Change: $' + '\n')
-    new_file.write('Greatest Increase in Profits: ' + max_inc_mo + ' ($' + str(max_inc) + ')\n')
-    new_file.write('Greatest Decrease in Profits: ' + max_dec_mo + ' ($' + str(max_dec) + ')\n')
+    output = ('Financial Analysis\n------------------------\n'
+              'Total Months: ' + str(months) + '\n'
+              'Total: $' + str(total) + '\n'
+              'Average Change: $' + '\n'
+              'Greatest Increase in Profits: ' + max_inc_mo + ' ($' + str(max_inc) + ')\n'
+              'Greatest Decrease in Profits: ' + max_dec_mo + ' ($' + str(max_dec) + ')\n'
+              )
+    print(output)
+    new_file.write(output)
