@@ -4,7 +4,7 @@ This is a repo for 2 Python challenges, `PyBank` & `PyPoll`. The `main.py` file 
 
 ## PyBank
 
-[PyBank/main.py]('./PyBank/main.py') reads through the financial records of a company in [budget_data.csv]('PyBank/resources/budget_data.csv') and calculates the following:
+[PyBank/main.py](PyBank/main.py) reads through the financial records of a company in [budget_data.csv]('PyBank/resources/budget_data.csv') and calculates the following:
 
 * Total number of months included in the dataset
 * Net total amount of "Profit/Losses"
