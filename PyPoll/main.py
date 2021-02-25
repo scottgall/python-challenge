@@ -34,7 +34,7 @@ with open('resources/election_data.csv', 'r') as csv_file:
               "Li: " + str('{:.3f}%'.format(round(li/votes*100, 3))) + " (" + str(li) + ")\n"
               "O'Tooley: " + str('{:.3f}%'.format(round(otooley/votes*100, 3))) + " (" + str(otooley) + ")\n"
               "------------------------\n"
-              "Winner: " + str(winner) + "\n"
+              "Winner: " + winner + "\n"
               "------------------------\n"
               )
     print(output)

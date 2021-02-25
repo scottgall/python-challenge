@@ -17,21 +17,26 @@ with open('resources/budget_data.csv', 'r') as csv_file:
       months += 1
       cur_pl = int(line[pl])
       cur_mo = line[mo]
+
       total += cur_pl
-      cur_change = (cur_pl - prev_pl)
+      cur_change = cur_pl - prev_pl
+      total_change += cur_change if months != 1 else 0
+
+      print("Current: {} Change: {} Total: {}".format(cur_pl, cur_change, total_change))
       if cur_change > max_inc:
         max_inc = cur_change
         max_inc_mo = cur_mo
       elif cur_change < max_dec:
         max_dec = cur_change
         max_dec_mo = cur_mo
-      # total_change += cur_change
+
       prev_pl = cur_pl
 
-    output = ('Financial Analysis\n------------------------\n'
+    output = ('Financial Analysis\n'
+              '------------------------\n'
               'Total Months: ' + str(months) + '\n'
               'Total: $' + str(total) + '\n'
-              'Average Change: $' + '\n'
+              'Average Change: ${:.2f}'.format(total_change/(months - 1)) + '\n'
               'Greatest Increase in Profits: ' + max_inc_mo + ' ($' + str(max_inc) + ')\n'
               'Greatest Decrease in Profits: ' + max_dec_mo + ' ($' + str(max_dec) + ')\n'
               )
