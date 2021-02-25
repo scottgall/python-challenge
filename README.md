@@ -12,7 +12,7 @@ This is a repo for 2 Python challenges, `PyBank` & `PyPoll`. The `main.py` file 
 * Greatest increase in profits (date & amount)
 * Greatest decrease in losses (date & amount)
 
-The final analysis resembles the snippet below:
+The financial analysis resembles the snippet below:
 ```
 Financial Analysis
 ------------------------
