@@ -15,15 +15,15 @@ with open('resources/election_data.csv', 'r') as csv_file:
     
     winner = max(candidates, key=lambda k: candidates[k])
 
-    output = "Election Results\n"
-    output += "------------------------\n"
-    output += "Total Votes: {} \n".format(votes)
-    output += "------------------------\n"
+    output = f"Election Results\n" \
+             f"------------------------\n" \
+             f"Total Votes: {votes} \n" \
+             f"------------------------\n"
     for c,v in candidates.items():
-      output += "{}: {:.3f}% ({})\n".format(c, (v/votes*100), v)
-    output += "------------------------\n"
-    output += "Winner: {}\n".format(winner)
-    output += "------------------------\n"
+      output += f"{c}: {v/votes*100:.3f}% ({v})\n"
+    output += f"------------------------\n" \
+              f"Winner: {winner}\n" \
+              f"------------------------\n"
 
     print(output)
     new_file.write(output)
