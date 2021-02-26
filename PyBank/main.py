@@ -1,8 +1,12 @@
+import os
 import csv
 
-with open('resources/budget_data.csv', 'r') as csv_file:
-  with open('analysis/financial_analysis.txt', 'w') as new_file:
-    csv_reader = csv.DictReader(csv_file)
+csv_file = os.path.join("resources", "budget_data.csv")
+data_output = os.path.join("analysis", "financial_analysis.csv")
+
+with open(csv_file) as csvfile:
+  with open(data_output, 'w') as newfile:
+    csv_reader = csv.DictReader(csvfile)
 
     months = 0
     total = 0
@@ -37,4 +41,4 @@ with open('resources/budget_data.csv', 'r') as csv_file:
              f'Greatest Decrease in Profits: {max_dec_mo} (${max_dec})\n'
 
     print(output)
-    new_file.write(output)
+    newfile.write(output)

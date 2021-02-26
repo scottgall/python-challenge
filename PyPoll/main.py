@@ -1,9 +1,13 @@
+import os
 import csv
 from collections import defaultdict
 
-with open('resources/election_data.csv', 'r') as csv_file:
-  with open('analysis/election_results.txt', 'w') as new_file:
-    csv_reader = csv.DictReader(csv_file)
+csv_file = os.path.join('resources', 'election_data.csv')
+data_output = os.path.join('analysis', 'election_results.txt')
+
+with open(csv_file) as csvfile:
+  with open(data_output, 'w') as newfile:
+    csv_reader = csv.DictReader(csvfile)
 
     votes = 0
 
@@ -26,4 +30,4 @@ with open('resources/election_data.csv', 'r') as csv_file:
               f"------------------------\n"
 
     print(output)
-    new_file.write(output)
+    newfile.write(output)
