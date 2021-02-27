@@ -5,8 +5,8 @@ from collections import defaultdict
 csv_file = os.path.join('resources', 'election_data.csv')
 data_output = os.path.join('analysis', 'election_results.txt')
 
-with open(csv_file) as csvfile:
-  with open(data_output, 'w') as newfile:
+with open(csv_file, 'r', encoding='utf8') as csvfile:
+  with open(data_output, 'w', encoding='utf8') as newfile:
     csv_reader = csv.DictReader(csvfile)
 
     votes = 0

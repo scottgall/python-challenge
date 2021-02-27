@@ -4,8 +4,8 @@ import csv
 csv_file = os.path.join("resources", "budget_data.csv")
 data_output = os.path.join("analysis", "financial_analysis.csv")
 
-with open(csv_file) as csvfile:
-  with open(data_output, 'w') as newfile:
+with open(csv_file, 'r', encoding='utf8') as csvfile:
+  with open(data_output, 'w', encoding='utf8') as newfile:
     csv_reader = csv.DictReader(csvfile)
 
     months = 0
